@@ -22,7 +22,7 @@ echo "fetching $ZIP_URL"
 rm -rf $REVISION
 mkdir $REVISION
 pushd $REVISION
-curl -# $ZIP_URL > $ZIP_FILE
+curl --limit-rate 50K -# $ZIP_URL > $ZIP_FILE
 echo "unzipping.."
 unzip $ZIP_FILE
 popd
